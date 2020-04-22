@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./zad1.js"></script>
+        <link rel="stylesheet" type="text/css" href="./zad1.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <title>Zad1</title>
+    </head>
+    <body>
+
+        <!--Edytor graficzny-->
+        <div>
+            <canvas id="canvas">
+
+                <!--Dodać zmiane kolorów-->
+                <!--Dodać zmiane rozmiaru rysowanej linii-->
+                <!--Dodać gumkę -->
+                <!-- Dodać wrzucanie własnych grafik-->
+
+            </canvas>
+        </div>
+
+        <div>
+            <p>Select file <input type="file" onchange="applyImage(this)"></p>
+            <p><img id="imagePreview" style="display: hidden;"></p>
+
+            <p>Set image width:<input id="imageWidth"></p>
+            <p>Set image height:<input id="imageHeight"></p>
+            <p>Set image X position:<input id="imageXPosition"></p>
+            <p>Set image Y position:<input id="imageYPosition"></p>
+            <p>
+                <button class="btn btn-default" onclick="addImageToCanvas()">Add image to canvas</button>
+            </p>
+
+        </div>
+
+
+    </body>
+</html>
