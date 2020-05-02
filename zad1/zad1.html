@@ -18,18 +18,55 @@
                 <!-- Dodać wrzucanie własnych grafik-->
 
             </canvas>
+
+
+            <div class="row optionsBlocksRow">
+
+                <div class="colorBlock " style="background-color: aqua;" onclick="changeColor('aqua')"></div>
+                <div class="colorBlock " style="background-color: coral;" onclick="changeColor('coral')"></div>
+                <div class="colorBlock " style="background-color: green;" onclick="changeColor('green')"></div>
+                <div class="colorBlock " style="background-color: hotpink;" onclick="changeColor('hotpink')"></div>
+                <div class="colorBlock " style="background-color: yellow;" onclick="changeColor('yellow')"></div>
+                <div class="colorBlock " style="background-color: white;" onclick="changeColor('white')"></div>
+                <div class="colorBlock " style="background-color: black;" onclick="changeColor('black')"></div>
+                <div class="colorBlock " style="background-color: gray;" onclick="changeColor('gray')"></div>
+
+                <div class="col-1"></div>
+
+                <div onclick="changeMode('rectangle')" class="optionBlock">
+                    Prostokąt
+                </div>
+
+                <div onclick="changeMode('circle')" class="optionBlock">
+                    Okrąg
+                </div>
+
+                <div onclick="changeMode('line')" class="optionBlock">
+                    Linia prosta
+                </div>
+
+                <div onclick="changeMode('rectangleFill')" class="optionBlock">
+                    Prostokąt z wypełnieniem
+                </div>
+                
+                <div onclick="changeMode('circleFill')" class="optionBlock">
+                    Okrąg z wypełnieniem
+                </div>
+
+
+            </div>
         </div>
 
         <div>
-            <p>Select file <input type="file" onchange="applyImage(this)"></p>
-            <p><img id="imagePreview" style="display: hidden;"></p>
+            <p>Wybierz plik z komputera <input type="file" onchange="applyImage(this)"></p>
+            <p><img id="imagePreview" style="display: none;"></p>
 
-            <p>Set image width:<input id="imageWidth"></p>
-            <p>Set image height:<input id="imageHeight"></p>
-            <p>Set image X position:<input id="imageXPosition"></p>
-            <p>Set image Y position:<input id="imageYPosition"></p>
+            <p>Ustaw szerokość obrazu:<input id="imageWidth"></p>
+            <p>Ustaw wysokość obrazu:<input id="imageHeight"></p>
+            <p>Ustaw pozycję X obrazu:<input id="imageXPosition"></p>
+            <p>Ustaw pozycję Y obrazu:<input id="imageYPosition"></p>
             <p>
-                <button class="btn btn-default" onclick="addImageToCanvas()">Add image to canvas</button>
+                <button class="btn btn-default" onclick="addImageToCanvas()">Dodaj grafikę do edytora</button>
             </p>
 
         </div>
@@ -37,3 +74,22 @@
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
