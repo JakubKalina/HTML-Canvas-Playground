@@ -51,7 +51,7 @@ function playGame() {
     // Ustawienie flagi
     backgroundReady = true;
     };
-    backgroundImage.src = "./Images/background.jpg";
+    backgroundImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/background.jpg";
 
 
     // Wczytanie Tom'a
@@ -61,7 +61,7 @@ function playGame() {
     // Ustawienie flagi
     tomReady = true;
     };
-    tomImage.src = "./Images/tom.png";
+    tomImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/tom.png";
 
 
     // Wczytanie Jerry'ego
@@ -71,7 +71,7 @@ function playGame() {
     // Ustawienie flagi
     jerryReady = true;
     };
-    jerryImage.src = "./Images/jerry.png";
+    jerryImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/jerry.png";
 
     var keysDown = {};
     var tom = {speed: 300};
