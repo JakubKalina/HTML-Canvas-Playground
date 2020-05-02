@@ -66,7 +66,7 @@ function playGame() {
     // Ustawienie flagi
     backgroundReady = true;
     };
-    backgroundImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/background.jpg";
+    backgroundImage.src = "https://raw.githubusercontent.com/JakubKalina/HTML-Canvas-Playground/master/zad2/Images/background.jpg";
 
 
 
@@ -77,7 +77,7 @@ function playGame() {
     // Ustawienie flagi
     tomReady = true;
     };
-    tomImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/tom.png";
+    tomImage.src = "https://raw.githubusercontent.com/JakubKalina/HTML-Canvas-Playground/master/zad2/Images/tom.png";
 
 
 
@@ -88,8 +88,7 @@ function playGame() {
     // Ustawienie flagi
     jerryReady = true;
     };
-    jerryImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/jerry.png";
-
+    jerryImage.src = "https://raw.githubusercontent.com/JakubKalina/HTML-Canvas-Playground/master/zad2/Images/jerry.png";
 
     var keysDown = {};
     var tom = {speed: 300};
