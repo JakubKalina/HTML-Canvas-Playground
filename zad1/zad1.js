@@ -63,8 +63,6 @@ window.addEventListener('load', () => {
                 a = step;
                 pi2 = Math.PI * 2 - step;
 
-
-        
                 context.beginPath();
             
                 context.moveTo(centerX + radiusX * Math.cos(0),
@@ -75,7 +73,6 @@ window.addEventListener('load', () => {
                             centerY + radiusY * Math.sin(a));
                 }
 
-            
                 context.closePath();
                 context.stroke();
               break;
@@ -96,8 +93,6 @@ window.addEventListener('load', () => {
                 a = stepFill;
                 pi2 = Math.PI * 2 - stepFill;
 
-
-        
                 context.beginPath();
             
                 context.moveTo(centerFillX + radiusFillX * Math.cos(0),
@@ -122,7 +117,6 @@ window.addEventListener('load', () => {
     function draw(obj) {
         if(!isDrawing) return;
 
-
         switch(currentMode) {
             case "line":
                 context.lineWidth = 1;
@@ -137,15 +131,10 @@ window.addEventListener('load', () => {
           }
     }
 
-
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", finishPosition);
     canvas.addEventListener("mousemove", draw);
-
-
-
 });
-
 
     // Zmiana koloru
     function changeColor(chosenColor) {
@@ -157,7 +146,6 @@ window.addEventListener('load', () => {
         currentMode = chosenMode;
         console.log('Wybrany tryb: ' + chosenMode);
     }
-
 
 
 // Wczytanie wymiarów canvas - width
@@ -177,7 +165,6 @@ function chooseCanvasWidth() {
           }
           catch(error) {
           }
-
     }
   }
 

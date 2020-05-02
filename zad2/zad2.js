@@ -1,7 +1,9 @@
 var canvas;
 var ctx;
 var playerName;
-
+var numberOfRecords = 0;
+var gameOver;
+var userRecords = [];
 
 function displayGameInfo() {
     alert("Celem gry jest wcielić się w postać Tom'a i jak największą ilość razy złapać Jerry'ego w zadanym czasie. Przed rozpoczęciem gry należy wpisać imię gracza i wybrać przycisk START");
@@ -9,7 +11,6 @@ function displayGameInfo() {
 
 
 window.addEventListener('load', () => {
-    //playGame();
     canvas = document.querySelector("#canvas");
     ctx = canvas.getContext("2d");
 
@@ -19,15 +20,29 @@ window.addEventListener('load', () => {
     document.body.appendChild(canvas);
 });
 
-// Wczytanie wyników najlepszych 3 graczy
+// Wczytanie wyników
 function loadUserRecords() {
+    numberOfRecords = 0;
+    document.getElementById("posts").innerHTML = "";
+    var t = "";
+    userRecords.forEach(function (arrayItem) {
+        numberOfRecords++;
+        var tr = "<tr>";
+        tr += "<td>"+arrayItem['id']+"</td>";
+        tr += "<td>"+arrayItem['name']+"</td>";
+        tr += "<td>"+arrayItem['score']+"</td>";
+        tr += "</tr>";
+        t += tr;
+    });
 
+    document.getElementById("posts").innerHTML += t;
 }
 
 // Wczytanie danych gracza i start gry
 function startGame() {
     playerName = document.getElementById("playerName").value;
     if(playerName) {
+        gameOver = true;
         playGame();
     } else {
         alert("Proszę podać nazwę gracza");
@@ -54,6 +69,7 @@ function playGame() {
     backgroundImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/background.jpg";
 
 
+
     // Wczytanie Tom'a
     var tomReady = false;
     var tomImage = new Image();
@@ -64,6 +80,7 @@ function playGame() {
     tomImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/tom.png";
 
 
+
     // Wczytanie Jerry'ego
     var jerryReady = false;
     var jerryImage = new Image();
@@ -72,6 +89,7 @@ function playGame() {
     jerryReady = true;
     };
     jerryImage.src = "https://github.com/JakubKalina/HTML-Canvas-Playground/blob/master/zad2/Images/jerry.png";
+
 
     var keysDown = {};
     var tom = {speed: 300};
@@ -124,7 +142,7 @@ function playGame() {
             }
     };
 
-    // WYświetlenie tła
+    // Wyświetlenie tła
     var render = function () {
             if (backgroundReady) {
                 ctx.drawImage(backgroundImage, 0, 0);
@@ -158,7 +176,6 @@ function playGame() {
     var finished = false;
     var counter = function(){
     count=count-1;
-    console.log(tom.speed);
 
         if (count <= 0)
         {
@@ -167,14 +184,25 @@ function playGame() {
         count=0;
         jerryReady=false;
         tomReady=false;
+        gameOver = true;
+        clearInterval(refreshIntervalId);
 
-        // Zapisanie uzyskanego wyniku
-
+        if(gameOver) {
+            // Zapisanie uzyskanego wyniku
+            var newRecord = {
+                id: numberOfRecords + 1,
+                name: playerName,
+                score: jerrysCaught
+            };
+            userRecords.push(newRecord);
+            gameOver = false;
+            loadUserRecords();
+        }
+        return;
         }
     }
 
-    setInterval(counter, 1000);
-    
+    var refreshIntervalId = setInterval(counter, 1000);
 
     var main = function () {
     update(0.02);
