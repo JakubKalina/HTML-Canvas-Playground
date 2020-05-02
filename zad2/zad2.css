@@ -1,0 +1,14 @@
+.gameSettingsBlock {
+    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+#canvas {
+    float: left;
+    width: 70%;
+}
+
+.gameSettingsBlock {
+    float: right;
+    width: 25%;
+}
